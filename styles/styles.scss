@@ -1,12 +1,188 @@
 //import font from google
-
+@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400&display=swap");
 
 //define global custom properties for colors and other properties
+$orange: #f6552e;
+$gray-dark: #2a272a;
+$gray-light: #aaa7aa;
+$black: #131013;
+$white: #fdf8fc;
+$gray-transparent: #29262999;
+$background-opacity: 70%;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.75vw;
+  color: white;
+  font-family: "Manjari", sans-serif;
+}
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 1.75vw;
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+h2 {
+  font-size: 1.15rem;
+  text-transform: capitalize;
+}
+p,
+a {
+  font-size: 0.7rem;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+
+  //   background: url("../images/bungalow.webp");
+  //   background-position: center;
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  background: url("../images/bungalow1.webp") center/cover no-repeat;
+
+  nav {
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    padding: 1% 2%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // border: 1px solid $gray-light;
+    // border-radius: 30px;
+
+    .left {
+      width: 15%;
+      // border: 1px solid $white;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .image {
+        width: 2.5rem;
+        aspect-ratio: 1/1;
+        background: url("../images/logo.png") center/90% no-repeat;
+        background-color: $gray-transparent;
+        border-radius: 50%;
+      }
+    }
+    .middle {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //   background-color: $gray-transparent;
+      border-radius: 30px;
+      a {
+        &:first-of-type {
+          border-bottom-left-radius: 30px;
+          border-top-left-radius: 30px;
+        }
+        &:last-of-type {
+          border-top-right-radius: 30px;
+          border-bottom-right-radius: 30px;
+        }
+        padding: 2.5% 2%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        background-color: $gray-transparent;
+        // border-radius: 30px;
+        .material-symbols-outlined {
+          // display: none;
+          font-size: 0.75rem;
+        }
+        p {
+          width: fit-content;
+          white-space: nowrap;
+        }
+      }
+      .active {
+        background-color: $orange;
+        // .material-symbols-outliined {
+        //   display: block;
+      }
+    }
+  }
+  .right {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1% 8%;
+      height: 40px;
+      background-color: $gray-transparent;
+      border-radius: 30px;
+      &:last-of-type{
+        background-color: $orange;
+      }
+    }
+  }
+}
+.container {
+  width: 100%;
+  height: 100%;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  section {
+    width: 100%;
+    height: 100vh;
+    padding: 2vh 2vw;
+    flex-shrink: 0;
+
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #home {
+    //background = hills4
+  }
+  #technologies {
+  }
+  #services {
+  }
+  #clients {
+  }
+  #contact {
+  }
 }
