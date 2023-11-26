@@ -1,5 +1,6 @@
 //import font from google
-@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;400&display=swap");
+//font sizes: 100 200 400
 
 //define global custom properties for colors and other properties
 $orange: #f6552e;
@@ -16,7 +17,7 @@ $background-opacity: 70%;
   box-sizing: border-box;
   font-size: 1.75vw;
   color: white;
-  font-family: "Manjari", sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 html {
@@ -36,8 +37,12 @@ h2 {
 p,
 a {
   font-size: 0.7rem;
+  font-weight: 200;
   text-transform: capitalize;
   text-decoration: none;
+}
+a {
+  cursor: url("../images/pointinghand.svg"), auto;
 }
 
 body {
@@ -51,16 +56,15 @@ body {
   gap: 0;
   position: relative;
 
-  //   background: url("../images/bungalow.webp");
-  //   background-position: center;
-  //   background-size: cover;
-  //   background-repeat: no-repeat;
-  background: url("../images/bungalow1.webp") center/cover no-repeat;
+  // background: url("../images/bungalow1.webp") center/cover no-repeat;
+  background-color: $gray-dark;
+  cursor: url("../images/cursor_3.svg"), auto;
 
   nav {
     width: 100%;
-    height: fit-content;
+    height: 8vh;
     position: absolute;
+    z-index: 2;
     top: 0;
     padding: 1% 2%;
 
@@ -79,9 +83,9 @@ body {
       align-items: center;
       justify-content: flex-start;
       .image {
-        width: 2.5rem;
+        width: 2rem;
         aspect-ratio: 1/1;
-        background: url("../images/logo.png") center/90% no-repeat;
+        background: url("../images/logo.png") center/100% no-repeat;
         background-color: $gray-transparent;
         border-radius: 50%;
       }
@@ -91,8 +95,8 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      //   background-color: $gray-transparent;
-      border-radius: 30px;
+
+      position: relative;
       a {
         &:first-of-type {
           border-bottom-left-radius: 30px;
@@ -102,14 +106,14 @@ body {
           border-top-right-radius: 30px;
           border-bottom-right-radius: 30px;
         }
-        padding: 2.5% 2%;
-        height: 40px;
+        // border: 1px solid white;
+        width: 20%;
+        padding: 1.2% 2%;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 5px;
         background-color: $gray-transparent;
-        // border-radius: 30px;
         .material-symbols-outlined {
           // display: none;
           font-size: 0.75rem;
@@ -120,9 +124,25 @@ body {
         }
       }
       .active {
+        .material-symbols-outlined {
+          color: $orange;
+        }
+        p {
+          color: $orange;
+        }
+      }
+      .slider{
+        position: absolute;
+        width: 20%;
+        height: 5px;
         background-color: $orange;
-        // .material-symbols-outliined {
-        //   display: block;
+        border-radius: 30%;
+        z-index: 2;
+        bottom: -5px;
+        left: 0;
+        border-left: 2vw solid transparent;
+        border-right: 2vw solid transparent;
+        background-clip: padding-box;
       }
     }
   }
@@ -135,11 +155,10 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1% 8%;
-      height: 40px;
+      padding: 2.5% 8%;
       background-color: $gray-transparent;
       border-radius: 30px;
-      &:last-of-type{
+      &:last-of-type {
         background-color: $orange;
       }
     }
@@ -149,7 +168,7 @@ body {
   width: 100%;
   height: 100%;
 
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -166,6 +185,7 @@ body {
     width: 100%;
     height: 100vh;
     padding: 2vh 2vw;
+    padding-top: 9vh;
     flex-shrink: 0;
 
     scroll-snap-align: start;
@@ -173,16 +193,83 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      font-size: 6rem;
+      text-transform: uppercase;
+      font-weight: 100;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Adjust the background color and opacity to create the dimming effect */
+      background-color: #00000080; /* Adjust the alpha (last value) for darkness */
+      z-index: -1; /* Push behind the content */
+    }
   }
   #home {
     //background = hills4
+    background: url("/images/hills4.webp") center/cover no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .left,
+    .right {
+      width: 50%;
+      height: 100%;
+      border: 1px solid white;
+      padding: 2vh 2vw;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      p {
+        width: 60%;
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
   }
   #technologies {
+    background: $black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 200px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: center;
+    }
   }
   #services {
+    background: url("/images/bungalow4.webp") center/cover no-repeat;
+    background-attachment: fixed;
   }
   #clients {
+    background: $gray-dark;
   }
   #contact {
+    background: url("/images/hills2.webp") center/cover no-repeat;
+    background-attachment: fixed;
   }
 }

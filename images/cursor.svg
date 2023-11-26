@@ -1,0 +1,20 @@
+<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.5 0L16.4645 14.5355L31 15.5L16.4645 16.4645L15.5 31L14.5355 16.4645L0 15.5L14.5355 14.5355L15.5 0Z" fill="white"/>
+<mask id="path-2-inside-1_31_4" fill="white">
+<path d="M0.210938 0.210892H13.3912V13.3912H0.210938V0.210892Z"/>
+</mask>
+<path d="M0.210938 0.210892V-0.789108H-0.789062V0.210892H0.210938ZM0.210938 1.21089H13.3912V-0.789108H0.210938V1.21089ZM1.21094 13.3912V0.210892H-0.789062V13.3912H1.21094Z" fill="white" mask="url(#path-2-inside-1_31_4)"/>
+<mask id="path-4-inside-2_31_4" fill="white">
+<path d="M17.8188 0H30.9991V13.1803H17.8188V0Z"/>
+</mask>
+<path d="M30.9991 0H31.9991V-1H30.9991V0ZM17.8188 1H30.9991V-1H17.8188V1ZM29.9991 0V13.1803H31.9991V0H29.9991Z" fill="white" mask="url(#path-4-inside-2_31_4)"/>
+<mask id="path-6-inside-3_31_4" fill="white">
+<path d="M17.8188 17.8197H30.9991V31H17.8188V17.8197Z"/>
+</mask>
+<path d="M30.9991 31V32H31.9991V31H30.9991ZM29.9991 17.8197V31H31.9991V17.8197H29.9991ZM30.9991 30H17.8188V32H30.9991V30Z" fill="white" mask="url(#path-6-inside-3_31_4)"/>
+<mask id="path-8-inside-4_31_4" fill="white">
+<path d="M0 17.8197H13.1803V31H0V17.8197Z"/>
+</mask>
+<path d="M0 31H-1V32H0V31ZM13.1803 30H0V32H13.1803V30ZM1 31V17.8197H-1V31H1Z" fill="white" mask="url(#path-8-inside-4_31_4)"/>
+<circle cx="15.4996" cy="15.5" r="5.27211" fill="#F6552E"/>
+</svg>

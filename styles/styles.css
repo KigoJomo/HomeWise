@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;400&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-size: 1.75vw;
   color: white;
-  font-family: "Manjari", sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 html {
@@ -27,8 +27,13 @@ h2 {
 p,
 a {
   font-size: 0.7rem;
+  font-weight: 200;
   text-transform: capitalize;
   text-decoration: none;
+}
+
+a {
+  cursor: url("../images/pointinghand.svg"), auto;
 }
 
 body {
@@ -40,13 +45,14 @@ body {
   justify-content: center;
   gap: 0;
   position: relative;
-  background: url("../images/bungalow1.webp") center/cover no-repeat;
+  background-color: #2a272a;
+  cursor: url("../images/cursor_3.svg"), auto;
 }
 body nav {
   width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 8vh;
   position: absolute;
+  z-index: 2;
   top: 0;
   padding: 1% 2%;
   display: flex;
@@ -60,9 +66,9 @@ body nav .left {
   justify-content: flex-start;
 }
 body nav .left .image {
-  width: 2.5rem;
+  width: 2rem;
   aspect-ratio: 1/1;
-  background: url("../images/logo.png") center/90% no-repeat;
+  background: url("../images/logo.png") center/100% no-repeat;
   background-color: rgba(41, 38, 41, 0.6);
   border-radius: 50%;
 }
@@ -71,11 +77,11 @@ body nav .middle {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 30px;
+  position: relative;
 }
 body nav .middle a {
-  padding: 2.5% 2%;
-  height: 40px;
+  width: 20%;
+  padding: 1.2% 2%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,8 +104,24 @@ body nav .middle a p {
   width: fit-content;
   white-space: nowrap;
 }
-body nav .middle .active {
+body nav .middle .active .material-symbols-outlined {
+  color: #f6552e;
+}
+body nav .middle .active p {
+  color: #f6552e;
+}
+body nav .middle .slider {
+  position: absolute;
+  width: 20%;
+  height: 5px;
   background-color: #f6552e;
+  border-radius: 30%;
+  z-index: 2;
+  bottom: -5px;
+  left: 0;
+  border-left: 2vw solid transparent;
+  border-right: 2vw solid transparent;
+  background-clip: padding-box;
 }
 body .right {
   width: 15%;
@@ -111,8 +133,7 @@ body .right a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1% 8%;
-  height: 40px;
+  padding: 2.5% 8%;
   background-color: rgba(41, 38, 41, 0.6);
   border-radius: 30px;
 }
@@ -123,7 +144,7 @@ body .right a:last-of-type {
 .container {
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -140,10 +161,85 @@ body .right a:last-of-type {
   width: 100%;
   height: 100vh;
   padding: 2vh 2vw;
+  padding-top: 9vh;
   flex-shrink: 0;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.container section h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+.container section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Adjust the background color and opacity to create the dimming effect */
+  background-color: rgba(0, 0, 0, 0.5019607843); /* Adjust the alpha (last value) for darkness */
+  z-index: -1; /* Push behind the content */
+}
+.container #home {
+  background: url("/images/hills4.webp") center/cover no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.container #home .left,
+.container #home .right {
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+  padding: 2vh 2vw;
+}
+.container #home .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.container #home .left p {
+  width: 60%;
+}
+.container #home .right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.container #technologies {
+  background: #131013;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container #technologies img {
+  width: 200px;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.container #services {
+  background: url("/images/bungalow4.webp") center/cover no-repeat;
+  background-attachment: fixed;
+}
+.container #clients {
+  background: #2a272a;
+}
+.container #contact {
+  background: url("/images/hills2.webp") center/cover no-repeat;
+  background-attachment: fixed;
 }/*# sourceMappingURL=styles.css.map */
