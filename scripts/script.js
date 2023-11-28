@@ -8,3 +8,24 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
         ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
+
+const container = document.querySelector(".container");
+const sections = document.querySelectorAll("section");
+const sectionAnchors = document.querySelectorAll(".section-anchor");
+
+function HandleScroll() {
+  sections.forEach((section) => {
+    if (elementIsVisibleInViewport(section)) {
+      const sectionId = section.id;
+      //get the id of the section that is currently in view
+      const sectionAnchor = document.querySelector(`a[href="#${sectionId}"]`);
+      //get the anchor element that points to the section in view
+      sectionAnchors.forEach((anchor) => anchor.classList.remove("active"));
+      //remove the active class from all sections
+      sectionAnchor.classList.add("active");
+      //add the active class to the anchor whose target is in view
+    }
+  });
+}
+HandleScroll();
+container.addEventListener("scroll", HandleScroll);

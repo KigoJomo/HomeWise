@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;400&display=swap");
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit-Thin.ttf") format("truetype");
+  src: url("../fonts/Kanit/Kanit-ExtraLight.ttf") format("truetype");
+  src: url("../fonts/Kanit/Kanit-Light.ttf") format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
@@ -24,16 +30,16 @@ h2 {
   text-transform: capitalize;
 }
 
-p,
 a {
   font-size: 0.7rem;
-  font-weight: 200;
+  font-weight: 400;
   text-transform: capitalize;
   text-decoration: none;
+  cursor: url("../images/pointinghand.svg"), auto;
 }
 
-a {
-  cursor: url("../images/pointinghand.svg"), auto;
+p {
+  font-size: 0.6rem;
 }
 
 body {
@@ -87,6 +93,7 @@ body nav .middle a {
   justify-content: center;
   gap: 5px;
   background-color: rgba(41, 38, 41, 0.6);
+  position: relative;
 }
 body nav .middle a:first-of-type {
   border-bottom-left-radius: 30px;
@@ -110,26 +117,24 @@ body nav .middle .active .material-symbols-outlined {
 body nav .middle .active p {
   color: #f6552e;
 }
-body nav .middle .slider {
+body nav .middle .active::before {
   position: absolute;
-  width: 20%;
-  height: 5px;
+  content: "";
+  width: 7%;
+  aspect-ratio: 1/1;
   background-color: #f6552e;
-  border-radius: 30%;
+  border-radius: 50%;
   z-index: 2;
   bottom: -5px;
-  left: 0;
-  border-left: 2vw solid transparent;
-  border-right: 2vw solid transparent;
   background-clip: padding-box;
 }
-body .right {
+body nav .right {
   width: 15%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-body .right a {
+body nav .right a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,11 +142,10 @@ body .right a {
   background-color: rgba(41, 38, 41, 0.6);
   border-radius: 30px;
 }
-body .right a:last-of-type {
+body nav .right a:last-of-type {
   background-color: #f6552e;
 }
-
-.container {
+body .container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -154,10 +158,10 @@ body .right a:last-of-type {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
-.container::-webkit-scrollbar {
+body .container::-webkit-scrollbar {
   display: none;
 }
-.container section {
+body .container section {
   width: 100%;
   height: 100vh;
   padding: 2vh 2vw;
@@ -171,12 +175,12 @@ body .right a:last-of-type {
   position: relative;
   z-index: 1;
 }
-.container section h1 {
-  font-size: 6rem;
+body .container section h1 {
+  font-size: 5rem;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 200;
 }
-.container section::before {
+body .container section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -187,44 +191,380 @@ body .right a:last-of-type {
   background-color: rgba(0, 0, 0, 0.5019607843); /* Adjust the alpha (last value) for darkness */
   z-index: -1; /* Push behind the content */
 }
-.container #home {
+body .container #home {
   background: url("/images/hills4.webp") center/cover no-repeat;
   background-attachment: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
-.container #home .left,
-.container #home .right {
+body .container #home .left,
+body .container #home .right {
   width: 50%;
   height: 100%;
-  border: 1px solid white;
   padding: 2vh 2vw;
+  padding-top: 6vh;
 }
-.container #home .left {
+body .container #home .left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 10vh;
 }
-.container #home .left p {
+body .container #home .left p {
   width: 60%;
 }
-.container #home .right {
+body .container #home .left .key {
+  width: 60%;
+  aspect-ratio: 4/1;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  transform: translateX(15%) translateY(40%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+body .container #home .left .key p {
+  text-transform: capitalize;
+}
+body .container #home .left .key .material-symbols-outlined {
+  position: absolute;
+  content: "";
+  height: 60%;
+  aspect-ratio: 1/1;
+  top: -65%;
+  right: -7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+body .container #home .left .key .material-symbols-outlined::before, body .container #home .left .key .material-symbols-outlined::after {
+  position: absolute;
+  content: "";
+  width: 30%;
+  height: 100%;
+  top: 0;
+  border: 1px solid white;
+}
+body .container #home .left .key .material-symbols-outlined::before {
+  left: 0;
+  border-right: none;
+}
+body .container #home .left .key .material-symbols-outlined::after {
+  right: 0;
+  border-left: none;
+}
+body .container #home .left .key:after {
+  position: absolute;
+  content: "";
+  height: 7px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid white;
+  bottom: -5px;
+  left: -8px;
+}
+body .container #home .right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
+  gap: 2vh;
+  position: relative;
 }
-.container #technologies {
+body .container #home .right .card1 {
+  height: 30%;
+  padding: 2%;
+  aspect-ratio: 2/1;
+  border-radius: 20px;
+  background-color: rgba(41, 38, 41, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+}
+body .container #home .right .card1 .knob {
+  height: 100%;
+  aspect-ratio: 1/1;
+  border: 1px solid #aaa7aa;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  position: relative;
+}
+body .container #home .right .card1 .knob h1 {
+  font-size: 1.2rem;
+  line-height: 1rem;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-15%);
+}
+body .container #home .right .card1 .knob h1::before, body .container #home .right .card1 .knob h1::after {
+  display: none;
+}
+body .container #home .right .card1 .knob::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  aspect-ratio: 1/1;
+  background-color: #fdf8fc;
+  border-radius: 50%;
+  top: 25%;
+  right: 1.5%;
+}
+body .container #home .right .card1 .quick-access {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4%;
+}
+body .container #home .right .card1 .quick-access p {
+  text-transform: capitalize;
+  font-weight: 400;
+  line-height: 0.6rem;
+}
+body .container #home .right .card1 .quick-access .icons {
+  width: 75%;
+  height: 65%;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5%;
+  row-gap: 5%;
+}
+body .container #home .right .card1 .quick-access .icons .icon {
+  height: 50%;
+  aspect-ratio: 1/1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #aaa7aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .container #home .right .card2 {
+  width: 50%;
+  aspect-ratio: 2/1;
+  padding: 1.7%;
+  border-radius: 20px;
+  background-color: rgba(41, 38, 41, 0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body .container #home .right .card2 .text {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+body .container #home .right .card2 .text h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+body .container #home .right .card2 .text p {
+  text-transform: capitalize;
+  color: #aaa7aa;
+}
+body .container #home .right .card2 .text .rooms {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body .container #home .right .card2 .text .rooms a {
+  width: 30%;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #aaa7aa;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+body .container #home .right .card2 .text .rooms a:hover > .toast {
+  opacity: 1;
+}
+body .container #home .right .card2 .text .rooms a::before {
+  position: absolute;
+  content: "";
+  width: 80%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 0.25vw solid rgba(41, 38, 41, 0.6);
+}
+body .container #home .right .card2 .text .rooms a .disc {
+  text-align: center;
+  width: 100%;
+}
+body .container #home .right .card2 img {
+  height: 100%;
+  width: 30%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 20px;
+}
+body .container #home .right .eco {
+  width: 50%;
+  aspect-ratio: 4/1;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  position: absolute;
+  left: -10%;
+  top: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+body .container #home .right .eco p {
+  text-transform: capitalize;
+}
+body .container #home .right .eco .material-symbols-outlined {
+  position: absolute;
+  content: "";
+  height: 60%;
+  aspect-ratio: 1/1;
+  bottom: -65%;
+  left: -7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+body .container #home .right .eco .material-symbols-outlined::before, body .container #home .right .eco .material-symbols-outlined::after {
+  position: absolute;
+  content: "";
+  width: 30%;
+  height: 100%;
+  top: 0;
+  border: 1px solid white;
+}
+body .container #home .right .eco .material-symbols-outlined::before {
+  left: 0;
+  border-right: none;
+}
+body .container #home .right .eco .material-symbols-outlined::after {
+  right: 0;
+  border-left: none;
+}
+body .container #home .right .eco:after {
+  position: absolute;
+  content: "";
+  height: 7px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid white;
+  top: -5px;
+  right: -8px;
+}
+body .container #home .right .remote {
+  width: 50%;
+  aspect-ratio: 6/1;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  position: absolute;
+  left: -22%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+body .container #home .right .remote p {
+  text-transform: capitalize;
+}
+body .container #home .right .remote .material-symbols-outlined {
+  position: absolute;
+  content: "";
+  height: 60%;
+  aspect-ratio: 1/1;
+  top: -65%;
+  left: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+body .container #home .right .remote .material-symbols-outlined::before, body .container #home .right .remote .material-symbols-outlined::after {
+  position: absolute;
+  content: "";
+  width: 30%;
+  height: 100%;
+  top: 0;
+  border: 1px solid white;
+}
+body .container #home .right .remote .material-symbols-outlined::before {
+  left: 0;
+  border-right: none;
+}
+body .container #home .right .remote .material-symbols-outlined::after {
+  right: 0;
+  border-left: none;
+}
+body .container #home .right .remote:after {
+  position: absolute;
+  content: "";
+  height: 7px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid white;
+  bottom: -5px;
+  right: -8px;
+}
+body .container #home h1 {
+  position: absolute;
+  bottom: 5%;
+}
+body .container #home h1::before, body .container #home h1::after {
+  position: absolute;
+  content: "";
+  border: 2px solid white;
+  height: 100%;
+  width: 3vw;
+}
+body .container #home h1::before {
+  left: -2%;
+  border-right: 0;
+}
+body .container #home h1::after {
+  right: -2%;
+  border-left: 0;
+}
+body .container #technologies {
   background: #131013;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.container #technologies img {
+body .container #technologies img {
   width: 200px;
   aspect-ratio: 1/1;
   -o-object-fit: cover;
@@ -232,14 +572,14 @@ body .right a:last-of-type {
   -o-object-position: center;
      object-position: center;
 }
-.container #services {
+body .container #services {
   background: url("/images/bungalow4.webp") center/cover no-repeat;
   background-attachment: fixed;
 }
-.container #clients {
+body .container #clients {
   background: #2a272a;
 }
-.container #contact {
+body .container #contact {
   background: url("/images/hills2.webp") center/cover no-repeat;
   background-attachment: fixed;
 }/*# sourceMappingURL=styles.css.map */
