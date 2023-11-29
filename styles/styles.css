@@ -716,8 +716,4 @@ body .container #clients {
 body .container #contact {
   background: url("/images/hills2.webp") center/cover no-repeat;
   background-attachment: fixed;
-}
-
-.material-symbols-outlined {
-  display: none;
 }/*# sourceMappingURL=styles.css.map */
