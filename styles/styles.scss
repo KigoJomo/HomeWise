@@ -41,6 +41,11 @@ h2 {
   font-size: 1.15rem;
   text-transform: capitalize;
 }
+h3 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
 a {
   font-size: 0.7rem;
   font-weight: 400;
@@ -65,7 +70,7 @@ body {
 
   // background: url("../images/bungalow1.webp") center/cover no-repeat;
   background-color: $gray-dark;
-  cursor: url("../images/cursor_3.svg"), auto;
+  cursor: url("../images/cursor.svg"), auto;
 
   nav {
     width: 100%;
@@ -347,7 +352,7 @@ body {
               top: 50%;
               transform: translateY(-15%);
               &::before,
-              &::after{
+              &::after {
                 display: none;
               }
             }
@@ -374,7 +379,7 @@ body {
             p {
               text-transform: capitalize;
               font-weight: 400;
-              line-height: .6rem;
+              line-height: 0.6rem;
             }
             .icons {
               width: 75%;
@@ -599,18 +604,18 @@ body {
         bottom: 5%;
         // border: 1px solid $white;
         &::before,
-        &::after{
+        &::after {
           position: absolute;
           content: "";
           border: 2px solid white;
           height: 100%;
           width: 3vw;
         }
-        &::before{
+        &::before {
           left: -2%;
           border-right: 0;
         }
-        &::after{
+        &::after {
           right: -2%;
           border-left: 0;
         }
@@ -618,20 +623,180 @@ body {
     }
     #technologies {
       background: $black;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      img {
-        width: 200px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-        object-position: center;
+      position: relative;
+      .links{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5vh;
+        right: 8%;
+        a{
+          width: 1vw;
+          aspect-ratio: 1/1;
+          background-color: $orange;
+          border-radius: 50%;
+          cursor: url("../images/pointinghand.svg"), auto;
+          z-index: 3;
+        }
+      }
+
+      .technologies-container {
+        width: 80%;
+        height: 80%;
+        padding: 1% 2%;
+        border: 3px solid $orange;
+        border-radius: 20px;
+        background-color: $gray-dark;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        scroll-padding-top: 3%;
+        &::-webkit-scrollbar{
+          display: none;
+        }
+        .technology-card {
+          // border: 1px solid $gray-light;
+          border-radius: 10px;
+          scroll-snap-align: start;
+          width: 100%;
+          height: 100%;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2vw;
+          &:nth-child(odd){
+            img{
+              order: 1;
+            }
+            .text{
+              order: 2;
+            }
+          }
+          &:nth-child(even){
+            img{
+              order: 2;
+            }
+            .text{
+              order: 1;
+            }
+          }
+          img {
+            width: 40%;
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: center;
+          }
+          .text {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 3vh;
+            h2 {
+              text-align: left;
+              color: $white;
+            }
+            p {
+              text-align: center;
+              color: $gray-light;
+            }
+          }
+        }
+        .future-tech {
+          scroll-snap-align: start;
+          width: 100%;
+          height: 100%;
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          h2 {
+            color: $white;
+            text-align: center;
+            text-decoration: underline;
+          }
+          p {
+            color: $gray-light;
+          }
+          .future-cards {
+            width: 100%;
+            height: 70%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .future-card {
+              // border: 1px solid $gray-light;
+              width: 30%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-start;
+              gap: 1vh;
+              h3 {
+                text-align: center;
+                color: $white;
+              }
+              img {
+                width: 100%;
+                aspect-ratio: 2/1;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 5px;
+              }
+              p {
+                width: 95%;
+                text-align: center;
+                color: $gray-light;
+              }
+            }
+          }
+        }
       }
     }
     #services {
       background: url("/images/bungalow4.webp") center/cover no-repeat;
       background-attachment: fixed;
+
+      .technologies-container {
+        .technology-card {
+          img {
+          }
+          .text {
+            h2 {
+            }
+            p {
+            }
+          }
+        }
+        .future-tech {
+          h2 {
+          }
+          p {
+          }
+          .future-card {
+            h3 {
+            }
+            img {
+            }
+            p {
+            }
+          }
+        }
+      }
     }
     #clients {
       background: $gray-dark;
@@ -641,4 +806,7 @@ body {
       background-attachment: fixed;
     }
   }
+}
+.material-symbols-outlined {
+  display: none;
 }

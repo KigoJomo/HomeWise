@@ -3,3 +3,9 @@ Dummy text:
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor nisi non metus ullamcorper, a ullamcorper lorem viverra. Nulla facilisi. Fusce eget libero enim. Nullam vestibulum, odio non dictum feugiat, felis turpis laoreet risus, ac tincidunt purus urna id elit. Vivamus hendrerit ipsum vitae vehicula. Cras vel ligula quam. Sed a urna nec purus ultricies efficitur.
     </p>
 
+
+1. IoT
+    HomeWise utilizes IoT technology to connect your home's appliances, devices, and sensors, enabling seamless automaion, remote control, and real-time monitoring.
+
+2. ML (Machine Learning)
+    HomeWise employs ML algorithms to personalize your smart home experience, optimizing energy consumption, predicitng maintenance needs, and adapting to your preferences over time.
