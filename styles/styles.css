@@ -551,7 +551,7 @@ body .container #home h1 {
 body .container #home h1::before, body .container #home h1::after {
   position: absolute;
   content: "";
-  border: 2px solid white;
+  border: 2px solid #f6552e;
   height: 100%;
   width: 3vw;
 }
@@ -566,6 +566,27 @@ body .container #home h1::after {
 body .container #technologies {
   background: #131013;
   position: relative;
+}
+body .container #technologies h1 {
+  position: absolute;
+  left: 5%;
+  font-size: 1.2rem;
+}
+body .container #technologies h1::before, body .container #technologies h1::after {
+  position: absolute;
+  content: "";
+  border: 2px solid #f6552e;
+  height: 5%;
+  width: 3vw;
+  left: -1vw;
+}
+body .container #technologies h1::before {
+  top: -2%;
+  border-bottom: 0;
+}
+body .container #technologies h1::after {
+  bottom: -2%;
+  border-top: 0;
 }
 body .container #technologies .links {
   position: absolute;
@@ -706,14 +727,263 @@ body .container #technologies .technologies-container .future-tech .future-cards
   text-align: center;
   color: #aaa7aa;
 }
-body .container #services {
-  background: url("/images/bungalow4.webp") center/cover no-repeat;
-  background-attachment: fixed;
-}
 body .container #clients {
   background: #2a272a;
+  justify-content: space-between;
+}
+body .container #clients .clients-container {
+  width: 100%;
+  height: 70%;
+  padding: 1% 1%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1vw;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  transition: justify-content 0.5s ease;
+}
+body .container #clients .clients-container::-webkit-scrollbar {
+  display: none;
+}
+body .container #clients .clients-container .client {
+  flex-shrink: 0;
+  height: 100%;
+  aspect-ratio: 9/16;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2%;
+  overflow-y: hidden;
+}
+body .container #clients .clients-container .client:hover img {
+  height: 39%;
+}
+body .container #clients .clients-container .client:hover .review {
+  height: 59%;
+  transform: translateY(0%);
+}
+body .container #clients .clients-container .client img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  transition: all 1s ease;
+}
+body .container #clients .clients-container .client .review {
+  transition: all 1s ease;
+  height: 0;
+  transform: translateY(100%);
+  width: 100%;
+  padding: 3% 3%;
+  border-radius: 20px;
+  background-color: #2a272a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1vh;
+  overflow: hidden;
+}
+body .container #clients .clients-container .client .review .profile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1vw;
+}
+body .container #clients .clients-container .client .review .profile img {
+  height: 7vh;
+  width: 7vh;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+body .container #clients .clients-container .client .review .profile h3 {
+  text-align: center;
+}
+body .container #clients .clients-container .client .review p {
+  text-align: center;
+  color: #aaa7aa;
+}
+body .container #clients h1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .container #clients h1::before, body .container #clients h1::after {
+  position: absolute;
+  content: "";
+  border: 2px solid #f6552e;
+  height: 70%;
+  width: 3vw;
+}
+body .container #clients h1::before {
+  left: -10%;
+  border-right: 0;
+}
+body .container #clients h1::after {
+  right: -10%;
+  border-left: 0;
 }
 body .container #contact {
   background: url("/images/hills2.webp") center/cover no-repeat;
   background-attachment: fixed;
+  gap: 2%;
+}
+body .container #contact .top,
+body .container #contact .bottom {
+  width: 97%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .container #contact .top {
+  height: 59%;
+  gap: 2%;
+  padding: 1% 3%;
+  background-color: #2a272a;
+}
+body .container #contact .top .left {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4vh;
+}
+body .container #contact .top .left h2 {
+  text-align: left;
+  font-weight: 400;
+}
+body .container #contact .top .left .links {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2%;
+  flex-wrap: wrap;
+  row-gap: 3vh;
+}
+body .container #contact .top .left .links a {
+  flex-shrink: 0;
+  width: 49%;
+  text-align: left;
+  color: #aaa7aa;
+  text-decoration: underline;
+}
+body .container #contact .top .right {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+}
+body .container #contact .top .right h2 {
+  font-weight: 400;
+}
+body .container #contact .top .right form {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4vh;
+}
+body .container #contact .top .right form .input {
+  width: 100%;
+  height: 7vh;
+  border: 1px solid #aaa7aa;
+  background-color: #fdf8fc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+body .container #contact .top .right form .input label {
+  position: absolute;
+  text-transform: capitalize;
+  font-size: 0.6rem;
+  color: #131013;
+  top: -30%;
+  left: 2%;
+  background-color: #fdf8fc;
+  border-radius: 5px;
+  padding: 0.5% 3%;
+}
+body .container #contact .top .right form .input input {
+  width: 100%;
+  height: 100%;
+  padding: 0 4%;
+  font-size: 0.7rem;
+  background-color: transparent;
+  color: #131013;
+  border: none;
+}
+body .container #contact .top .right form .input input:focus {
+  border: none;
+  outline: none;
+}
+body .container #contact .top .right form .buttons {
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+}
+body .container #contact .top .right form .buttons button {
+  height: 100%;
+  width: 49%;
+  background-color: #f6552e;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+  border-radius: 10px;
+  cursor: url("../images/pointinghand.svg"), auto;
+}
+body .container #contact .top .right form .buttons #free-trial {
+  border: 1px solid #f6552e;
+  background-color: transparent;
+}
+body .container #contact .bottom {
+  height: 39%;
+  background-color: #131013;
+}
+body .container #contact .bottom h1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .container #contact .bottom h1::before, body .container #contact .bottom h1::after {
+  position: absolute;
+  content: "";
+  border: 2px solid #f6552e;
+  height: 90%;
+  width: 3vw;
+}
+body .container #contact .bottom h1::before {
+  left: -1%;
+  border-right: 0;
+}
+body .container #contact .bottom h1::after {
+  right: -1%;
+  border-left: 0;
 }/*# sourceMappingURL=styles.css.map */

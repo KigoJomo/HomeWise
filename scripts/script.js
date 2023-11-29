@@ -29,3 +29,25 @@ function HandleScroll() {
 }
 HandleScroll();
 container.addEventListener("scroll", HandleScroll);
+
+sectionAnchors.forEach((anchor) => {
+  anchor.addEventListener("click", () => {
+    sectionAnchors.forEach((link) => link.classList.remove("active"));
+    anchor.classList.add("active");
+  })
+})
+
+const clientsContainer = document.querySelector(".clients-container");
+const leftClients = document.querySelectorAll(".client-left");
+const rightClients = document.querySelectorAll(".client-right");
+leftClients.forEach((client) => {
+  client.addEventListener("mouseover", () => {
+    clientsContainer.style.scrollBehaviour = 'smooth'; clientsContainer.scrollLeft -= client.offsetWidth*3;
+  })
+})
+rightClients.forEach((client) => {
+  client.addEventListener("mouseover", () => {
+    clientsContainer.style.scrollBehaviour = "smooth";
+    clientsContainer.scrollLeft += client.offsetWidth*3;
+  })
+})
