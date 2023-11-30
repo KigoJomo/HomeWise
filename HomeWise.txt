@@ -33,6 +33,8 @@ Basic ML Integration for Predictive Functions
 Access to Essential NLP Commands
 Email Support
 Basic Security Monitoring
+
+
 Standard Plan - "Smart Home Pro":
 
 Price: $24.99/month
@@ -42,6 +44,8 @@ Advanced ML Features for Adaptive Automation
 Enhanced NLP Capability for Voice Control
 24/7 Customer Support
 Comprehensive Security & Intrusion Alerts
+
+
 Premium Plan - "Ultimate Smart Living":
 
 Price: $49.99/month
@@ -52,3 +56,32 @@ Full NLP Command Customization
 Priority Support (Phone, Chat, Email)
 Enhanced Security with AI-driven Threat Detection
 Access to Exclusive HomeWise Partner Integrations
+
+
+<h3>Smart Essentials</h3>
+<ul>
+  <li>Standard IoT Integration (Limited Devices)</li>
+  <li>Basic ML Integration for Predictive Functions</li>
+  <li>Access to Essential NLP Commands</li>
+  <li>Email Support</li>
+  <li>Basic Security Monitoring</li>
+</ul>
+
+<h3>Smart Home Pro</h3>
+<ul>
+  <li>Expanded IoT Integration (More Devices)</li>
+  <li>Advanced ML Features for Adaptive Automation</li>
+  <li>Enhanced NLP Capability for Voice Control</li>
+  <li>24/7 Customer Support</li>
+  <li>Comprehensive Security & Intrusion Alerts</li>
+</ul>
+
+<h3>Ultimate Smart Living</h3>
+<ul>
+  <li>Complete IoT Integration (Unlimited Devices)</li>
+  <li>Advanced ML Predictive Analytics</li>
+  <li>Full NLP Command Customization</li>
+  <li>Priority Support (Phone, Chat, Email)</li>
+  <li>Enhanced Security with AI-driven Threat Detection</li>
+  <li>Access to Exclusive HomeWise Partner Integrations</li>
+</ul>

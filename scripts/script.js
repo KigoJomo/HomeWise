@@ -51,3 +51,15 @@ rightClients.forEach((client) => {
     clientsContainer.scrollLeft += client.offsetWidth*3;
   })
 })
+
+const pricingContainer = document.querySelector(".pricing-plans");
+const plansButton = document.getElementById("plans-btn");
+const tints = document.querySelectorAll(".tint");
+plansButton.addEventListener("click", () => {
+  pricingContainer.style.display = "flex";
+})
+tints.forEach((tint) => {
+  tint.addEventListener("click", () => {
+    pricingContainer.style.display = "none";
+  })
+})
