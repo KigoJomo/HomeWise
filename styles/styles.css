@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;400&display=swap");
-@font-face {
-  font-family: "Kanit";
-  src: url("../fonts/Kanit/Kanit-Thin.ttf") format("truetype");
-  src: url("../fonts/Kanit/Kanit-ExtraLight.ttf") format("truetype");
-  src: url("../fonts/Kanit/Kanit-Light.ttf") format("truetype");
-}
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +35,7 @@ a {
   font-weight: 400;
   text-transform: capitalize;
   text-decoration: none;
-  cursor: url("../images/pointinghand.svg"), auto;
+  cursor: url("../images/pointer.png"), auto;
 }
 
 p,
@@ -52,6 +46,7 @@ li {
 body {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,6 +55,12 @@ body {
   position: relative;
   background-color: #2a272a;
   cursor: url("../images/cursor.svg"), auto;
+}
+body .logo {
+  display: none;
+}
+body .menu {
+  display: none;
 }
 body nav {
   width: 100%;
@@ -195,7 +196,7 @@ body .container section::before {
   width: 100%;
   height: 100%;
   /* Adjust the background color and opacity to create the dimming effect */
-  background-color: rgba(0, 0, 0, 0.5019607843); /* Adjust the alpha (last value) for darkness */
+  background-color: rgba(0, 0, 0, 0.6117647059); /* Adjust the alpha (last value) for darkness */
   z-index: -1; /* Push behind the content */
 }
 body .container #home {
@@ -555,6 +556,7 @@ body .container #home h1::before, body .container #home h1::after {
   border: 2px solid #f6552e;
   height: 100%;
   width: 3vw;
+  top: 0;
 }
 body .container #home h1::before {
   left: -2%;
@@ -603,7 +605,6 @@ body .container #technologies .links a {
   aspect-ratio: 1/1;
   background-color: #f6552e;
   border-radius: 50%;
-  cursor: url("../images/pointinghand.svg"), auto;
   z-index: 3;
 }
 body .container #technologies .technologies-container {
@@ -959,7 +960,6 @@ body .container #contact .top .right form .buttons a {
   text-transform: capitalize;
   font-size: 0.7rem;
   border-radius: 10px;
-  cursor: url("../images/pointinghand.svg"), auto;
 }
 body .container #contact .top .right form .buttons #free-trial {
   border: 1px solid #f6552e;
@@ -1055,5 +1055,215 @@ body .container #contact .pricing-plans .plan button {
   border-radius: 5px;
   font-size: 0.7rem;
   height: 5vh;
-  cursor: url("../images/pointinghand.svg"), auto;
+  cursor: url("../images/pointer.png"), auto;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3.4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.8rem;
+  }
+  a {
+    font-size: 2.5rem;
+  }
+  p,
+  li {
+    font-size: 2.3rem;
+  }
+  body .logo {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 30px;
+    left: 30px;
+    width: 15%;
+    aspect-ratio: 1/1;
+    max-width: 90px;
+    min-width: 20px;
+    background: url("../images/logo.png") center/cover no-repeat;
+  }
+  body .menu {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 40px;
+    right: 20px;
+    cursor: pointer;
+    width: 10%;
+    max-width: 50px;
+    min-width: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+  }
+  body .menu .corner {
+    position: absolute;
+    height: 40%;
+    width: 40%;
+    border: 3px solid #fdf8fc;
+    border-radius: 5px;
+    transition: all 1s ease-in-out;
+  }
+  body .menu .corner1 {
+    top: 5%;
+    left: 5%;
+  }
+  body .menu .corner2 {
+    top: 5%;
+    right: 5%;
+  }
+  body .menu .corner3 {
+    bottom: 5%;
+    left: 5%;
+  }
+  body .menu .corner4 {
+    bottom: 5%;
+    right: 5%;
+  }
+  body .menu-opened .corner {
+    border-width: 4px;
+    transition: all 1s ease-in-out;
+  }
+  body .menu-opened .corner1 {
+    top: 5%;
+    left: 5%;
+    border-right-width: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transform: rotateZ(45deg);
+  }
+  body .menu-opened .corner2 {
+    top: 5%;
+    right: 5%;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transform: rotateZ(-45deg);
+  }
+  body .menu-opened .corner3 {
+    bottom: 5%;
+    left: 5%;
+    border-right-width: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    transform: rotateZ(-45deg);
+  }
+  body .menu-opened .corner4 {
+    bottom: 5%;
+    right: 5%;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transform: rotateZ(45deg);
+  }
+  body nav {
+    width: 50%;
+    height: 100%;
+    padding: 20px 20px;
+    padding-top: 12vh;
+    top: 0;
+    right: -55%;
+    transition: all 1s ease;
+    background-color: rgba(41, 38, 41, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  body nav .left {
+    display: none;
+  }
+  body nav .middle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3vh;
+  }
+  body nav .middle a {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    background-color: transparent;
+  }
+  body nav .middle a .material-symbols-outlined {
+    display: none;
+  }
+  body nav .middle .active::before {
+    bottom: -25%;
+  }
+  body nav .right {
+    display: none;
+  }
+  body .container #home {
+    flex-direction: column;
+  }
+  body .container #home .left,
+  body .container #home .right {
+    position: relative;
+    width: 100%;
+    height: 50%;
+  }
+  body .container #home .left {
+    justify-content: flex-end;
+    padding-bottom: 10vh;
+  }
+  body .container #home .left p {
+    width: 100%;
+    text-align: center;
+  }
+  body .container #home .left .key {
+    position: absolute;
+    top: 0%;
+  }
+  body .container #home .left .key .material-symbols-outlined {
+    font-size: 3rem;
+  }
+  body .container #home .right {
+    padding-top: 5vh;
+    justify-content: center;
+    gap: 2vh;
+  }
+  body .container #home .right .eco {
+    width: 40%;
+    aspect-ratio: 3/1;
+    top: 20%;
+    left: 10%;
+  }
+  body .container #home .right .eco .material-symbols-outlined {
+    font-size: 3rem;
+  }
+  body .container #home .right .remote {
+    width: 40%;
+    aspect-ratio: 3/1;
+    left: 5%;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    border-left: 0;
+  }
+  body .container #home .right .remote .material-symbols-outlined {
+    left: 90%;
+    font-size: 3rem;
+  }
+  body .container #home .right .remote:after {
+    left: -8px;
+  }
+  body .container #home h1 {
+    width: 90%;
+    height: -moz-fit-content;
+    height: fit-content;
+    bottom: 41%;
+    font-size: 6rem;
+    line-height: 6rem;
+    text-align: center;
+  }
+  body .container #home h1::before, body .container #home h1::after {
+    border-width: 4px;
+  }
 }/*# sourceMappingURL=styles.css.map */

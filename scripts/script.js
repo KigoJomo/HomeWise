@@ -34,32 +34,62 @@ sectionAnchors.forEach((anchor) => {
   anchor.addEventListener("click", () => {
     sectionAnchors.forEach((link) => link.classList.remove("active"));
     anchor.classList.add("active");
-  })
-})
+  });
+});
 
 const clientsContainer = document.querySelector(".clients-container");
 const leftClients = document.querySelectorAll(".client-left");
 const rightClients = document.querySelectorAll(".client-right");
 leftClients.forEach((client) => {
   client.addEventListener("mouseover", () => {
-    clientsContainer.style.scrollBehaviour = 'smooth'; clientsContainer.scrollLeft -= client.offsetWidth*3;
-  })
-})
+    clientsContainer.style.scrollBehaviour = "smooth";
+    clientsContainer.scrollLeft -= client.offsetWidth * 3;
+  });
+});
 rightClients.forEach((client) => {
   client.addEventListener("mouseover", () => {
     clientsContainer.style.scrollBehaviour = "smooth";
-    clientsContainer.scrollLeft += client.offsetWidth*3;
-  })
-})
+    clientsContainer.scrollLeft += client.offsetWidth * 3;
+  });
+});
 
 const pricingContainer = document.querySelector(".pricing-plans");
 const plansButton = document.getElementById("plans-btn");
 const tints = document.querySelectorAll(".tint");
+const nameInput = document.forms["signupForm"]["name"].value;
+const emailInput = document.forms["signupForm"]["email"].value;
 plansButton.addEventListener("click", () => {
-  pricingContainer.style.display = "flex";
-})
+  if (nameInput == "" || emailInput == "") {
+    alert("Please fill out both fields");
+  } else {
+    pricingContainer.style.display = "flex";
+  }
+});
 tints.forEach((tint) => {
   tint.addEventListener("click", () => {
     pricingContainer.style.display = "none";
-  })
-})
+  });
+});
+
+const menuButton = document.querySelector(".menu");
+const nav = document.querySelector("nav");
+
+var clicked = false;
+menuButton.addEventListener("click", openMenu);
+container.addEventListener("click", () => {
+  if (clicked) {
+    openMenu();
+  }
+});
+
+function openMenu() {
+  if (!clicked) {
+    menuButton.classList.add("menu-opened");
+    nav.style.right = "0";
+    clicked = true;
+  } else {
+    menuButton.classList.remove("menu-opened");
+    nav.style.right = "-55%";
+    clicked = false;
+  }
+}
